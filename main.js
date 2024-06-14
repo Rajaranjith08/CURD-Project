@@ -1,12 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose")
 const movieRoute = require("./routes/movies.route");
+const dotenv = require("dotenv")
+
 
 // express app
 const app = express();
 
-//connecting to mongodb 
-const dbURI =  `mongodb+srv://rajaranjithmovieProject:1234567890@firstprojectnodejs.yy4bi8x.mongodb.net/movieAPI-project?retryWrites=true&w=majority&appName=firstProjectNodeJS`
+// config the env file to reflect your server
+dotenv.config()
+
+//connecting to mongodb and install ( npm install dotenv)
+const dbURI = process.env.MongodbUrl
 mongoose.connect(dbURI)
     .then( result => {
         app.listen(3000);

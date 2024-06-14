@@ -1,1 +1,5 @@
+# hide a node module
 node_modules
+
+#hide a sensitive information
+.env
