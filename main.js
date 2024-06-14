@@ -1,33 +1,21 @@
 const express = require("express");
+const movieRoute = require("./routes/movies.route")
+
+
 
 const app = express();
 
 
-app.get('/',(req,res)=>{
-    res.json({msg:'hello student'})
-});
+app.get ('/',(req,res)=>{
+    res.json({msg:"hello ranjith"})
+})
 
 // CURD functionalistyof movies
+// using middlewares to import the routes this is ( client -> middleware -> server )
 
-// R - for reading
-app.get('/movies',(req,res)=>{
+app.use("/movies", movieRoute)
 
-});
 
-// C - for creating
-app.post('/movies',(req,res)=>{
-
-});
-
-// U - for updating movie
-app.put('/movies/:id',(req,res)=>{
-
-});
-
-// D - for deleting movie
-app.delete('/movies:id',(req,res)=>{
-
-})
 
 
 app.listen(3000);
