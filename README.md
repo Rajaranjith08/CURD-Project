@@ -23,24 +23,25 @@ provide a movie api for react.js app.
 
 ### connecting the databse using mongoose 
 how to connect?
-step-1: create const eg:
+1. step-1: create const eg:
             const dbURI= ( get url from mongodb server and paste it (note: dont use the space insid a url link) )
-step-2: connect a mongodb and mongoose
+2. step-2: connect a mongodb and mongoose
             const mongoose = require(" mongoose ")
-step-3: create a promise for this fucntion
+3. step-3: create a promise for this fucntion
             mongoose.connect(dbURI)
                 .then( result => app.listen(3000) )
                 .catch ( err => console.log(err) )
 
 ### env is called environment variable this is used to hide a infomation from git 
-step-1: create a .env file
-step-2: create a name and paste a url for mongodb
+1. step-1: create a .env file
+2. step-2: create a name and paste a url for mongodb
         MongodbUrl = url from mongodb
-step-3: install a dotenv
+3. step-3: install a dotenv
         npm install dotenv
-step-4: config the env file
-step-5: paste it in main.js
+4. step-4: config the env file
+5. step-5: paste it in main.js
         const dburl = process.env.MongodbUrl
         mongoose.connect(dbURI)........
         ....
-step-6: add the file in gitignore.
+6. step-6: add the file in gitignore.
+7. step-7: create a env exmaple file
