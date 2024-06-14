@@ -1,3 +1,4 @@
+const movies = require("../models/movie.model");
 
 
 const movie_index =  (req,res)=>{
@@ -5,7 +6,16 @@ const movie_index =  (req,res)=>{
 }
 
 const movie_create = (req,res)=>{
-    res.send('create a movie')
+    
+    // validate a data is must 
+    const movie = new movies({
+        title: req.body.title,
+        descripation: req.body.desc,
+    });
+    movie.save()
+        .then(result => res.send(result))
+        .catch(err => console.log(err.message))
+
 }
 
 const movie_update = (req,res)=>{

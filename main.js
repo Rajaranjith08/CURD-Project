@@ -10,6 +10,10 @@ const app = express();
 // config the env file to reflect your server
 dotenv.config()
 
+// data understanding middleware 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 //connecting to mongodb and install ( npm install dotenv)
 const dbURI = process.env.MongodbUrl
 mongoose.connect(dbURI)
